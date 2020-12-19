@@ -1,0 +1,129 @@
+body {
+  font-family: "Lato", sans-serif;
+  transition: background-color 0.5s;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.bg-black2 {
+  background-color: #000000de !important;
+  background-size: cover !important;
+  height: 100vh;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.border-bottom-main {
+  border-bottom: 1px solid #e4bd30;
+}
+.border-bottom-black {
+  border-bottom: 1px solid #000000;
+}
+.bg-black {
+  background-color: #000000c9 !important;
+  background-size: cover !important;
+  height: 100vh;
+}
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.mt-120 {
+  margin-top: 125px !important;
+}
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+.color-main {
+  color: #e4bd30 !important;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.sidenav img {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-size: 36px;
+  margin-left: 5px;
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+.operations {
+  width: 190px !important;
+}
+.operations a i {
+  font-size: 21px !important;
+}
+#main {
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+.header th {
+  border-bottom: 1px solid #000000 !important;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+.text-white {
+  color: #ffffff !important;
+}
+.h-600 {
+  height: 500px !important;
+  background-color: #ffffffdc !important;
+}
+.bg-white {
+  background-color: #ffffff !important;
+  width: 100% !important;
+}
+.text-black {
+  color: #000000 !important;
+}
+.bg-main {
+  background-color: #e4bd30 !important;
+}
+.border-main {
+  border: 1px solid #e4bd30 !important;
+}
+table th,
+td {
+  border: 1px solid #8181814b !important;
+}
+.sidenav a:hover {
+  color: #e4bd30 !important;
+}
+.btn-main {
+  background-color: #e4bd30 !important;
+  color: #fff !important;
+  border-radius: 5px;
+  font-weight: bold;
+  border: 3px solid #e4bd30 !important;
+}
+.btn-main:hover {
+  background-color: #ffffff !important;
+  border: 3px solid #e4bd30 !important;
+  color: #e4bd30 !important;
+}
