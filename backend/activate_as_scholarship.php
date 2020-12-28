@@ -7,7 +7,7 @@
       }
     $db=openCon();
     $id=$_GET['id'];
-    $update=" UPDATE user set is_active =1 , level = 1 , isScholarship = 0 where id = $id" ;
+    $update=" UPDATE user set is_active =0 , level = 1 , isScholarship = 1 where id = $id" ;
     $query= mysqli_query($db , $update);
     if( $query){
         date_default_timezone_set("Asia/Amman");

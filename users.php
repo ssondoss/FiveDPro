@@ -12,7 +12,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FDPro | Home</title>
+    <title>FDPro | All Users</title>
     <link rel="shortcut icon" href="images/FD Web.png" type="image/x-icon" />
 
     <script src="include.js"></script>
@@ -61,22 +61,24 @@
           <table class="table table-bordered">
             <thead class="text-center">
               <tr class="header">
-                <th colspan="6" class="text-black py-3 h4">USERS ACTIVATION</th>
+                <th colspan="7" class="text-black py-3 h4">ALL USERS</th>
               </tr>
               <tr class="h6">
-                <th class="py-3">id</th>
+                <th class="py-3">Id</th>
                 <th class="py-3">Username</th>
-                <th class="py-3">E-mail</th>
+                <th class="py-3">Email</th>
+                <th class="py-3">Mobile Phone</th>
+                <th class="py-3">IsActive</th>
+                <th class="py-3">IsVerfied</th>
+                <th class="py-3">Level</th>
 
-                <th class="py-3">Phone number</th>
-                <th class="py-3">activation</th>
               </tr>
             </thead>
             <tbody class="text-center">
              
                 <?php
                   $db = openCon();
-                  $select= "SELECT username , id,  email , phone , is_active  from user where is_active = 0";
+                  $select= "SELECT *  from user ";
                   $query = mysqli_query($db , $select);
                   $rows= mysqli_num_rows($query);
                   for($i=0 ; $i<$rows ; $i++ )
@@ -84,27 +86,13 @@
                     $array= $query->fetch_assoc();
                     echo'
                     <tr>
-                        <td>'.$array["id"].'</td>
+                        <td> 5DP' . sprintf("%07d", $array["id"]) .'</td>
                         <td>'.$array["username"].'</td>
                         <td>'.$array["email"].'</td>
                         <td>'.$array["phone"].'</td>
-                        <td class="operations mx-auto">
-                          <a
-                            data-toggle="tooltip"
-                            title="activate"
-                            onclick="activate('.$array["id"].')"
-                            class="col-md-2"
-                          >
-                            <i class="fa fa-check-square-o text-success py-1"></i
-                          ></a>
-                          <a data-toggle="tooltip" title="Ignore" class="col-md-2"
-                          onclick="activateAsScholarship('.$array["id"].')"
-                            ><i class="fa fa-exclamation-triangle text-warning py-1"></i
-                          ></a>
-                          <a data-toggle="tooltip" title="Delete" class="col-md-2">
-                            <i class="fa fa-trash text-danger py-1"></i
-                          ></a>
-                        </td>
+                        <td>'.$array["is_active"].'</td>
+                        <td>'.$array["is_verify"].'</td>
+                        <td>'.$array["level"].'</td>
                         </tr>';
               }
                 ?>
@@ -136,44 +124,15 @@
                 if (result.isConfirmed) 
                 location.reload();
                 });
-              },
+  },
               error: function (data){
                 Swal.fire({
-                  icon: 'error',
-                  title: 'Oops...',
-                  text: 'Something went wrong!',
-                }) ;
-             },
+  icon: 'error',
+  title: 'Oops...',
+  text: 'Something went wrong!',
+}) ;             },
             }
         );
-      }
-
-      function activateAsScholarship(id){
-        jQuery.ajax({
-              url: "./backend/activate_as_scholarship.php",
-              type: "GET",
-              data: {
-                id:id,
-              },
-              success: function (data){
-                Swal.fire({
-                  icon: 'success',
-                  text: 'You Have Activate User As Scholarship Successfully!',
-                }).then((result) => 
-                {
-                if (result.isConfirmed) 
-                location.reload();
-                });
-              },
-              error: function (data){
-                  Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Something went wrong!',
-                  }) ;        
-               },
-              }
-          );
       }
     </script>
     <script>
